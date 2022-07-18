@@ -1,3 +1,9 @@
+## 3.7.1-beta2
+  - Another tweak to allow standard redis connection
+
+## 3.7.1-beta2
+  - Tweaks to allow standard redis connection
+
 ## 3.7.1-beta1
   - Updated to allow redis sentinel connections
 

@@ -81,7 +81,7 @@ module LogStash
       public
 
       def register
-        @redis_url = if @sentinel.nil?
+        @redis_url = if @sentinel.length.zero?
                        @path.nil? ? "redis://#{@password}@#{@host}:#{@port}/#{@db}" : "#{@password}@#{@path}/#{@db}"
                      else
                        "redis://@#{@sentinel_host}"
@@ -136,10 +136,10 @@ module LogStash
           ssl: @ssl
         }
 
-        if @path.nil? && @sentinel_host.nil?
+        if @path.nil? && @sentinel_host.length.zero?
           params[:host] = @host
           params[:port] = @port
-        elsif @path.nil? && @sentinel_host
+        elsif @path.nil? && @sentinel_host.length > 0
           params[:url] = "redis://#{@sentinel_host}"
           params[:role] = :master
           params[:sentinels] = sentinel_connection_params
