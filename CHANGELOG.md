@@ -1,3 +1,6 @@
+## 3.7.1-beta1
+  - Updated to allow redis sentinel connections
+
 ## 3.7.0
   - Fix: better (Redis) exception handling [#89](https://github.com/logstash-plugins/logstash-input-redis/pull/89)
   - Test: start running integration specs on CI
